@@ -1,9 +1,25 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { User } from '../../Models/user';
 import pageStyles from './victor.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Victor Sanborn");
+  const [apiUserInfo, setApiUserInfo] = useState<User>();
+
+  useEffect(() => {
+		fetch(`../../api/user-information/victor/WubalubaDubDub`)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data: User) {
+        console.log(data);
+				setApiUserInfo(data);
+			})
+			.catch(function (error) {
+				console.log('Booo', error);
+			});
+	}, []);
 
   function clickTitle() {
     setUserName(oldVal => {
@@ -34,6 +50,21 @@ export default function Home() {
           <br/>
           Et architecto dolorem et enim fugit eos cumque laudantium qui unde consequuntur. Aut eligendi culpa ad excepturi consequatur ad eaque soluta et mollitia sunt nam placeat perspiciatis. Ea ipsa expedita ut laborum sequi non odit similique ut maiores repellat est enim debitis vel repellat illo? Et modi ipsam non beatae expedita id voluptas voluptatibus aut omnis voluptatem ut omnis obcaecati.
         </p>
+
+        {/* <section>
+          <p>API</p>
+          <h1 className={pageStyles.title} onClick={() => clickTitle()}>
+         { apiUserInfo.UserName} - {apiUserInfo.UserId}
+        </h1>
+
+        <p className={pageStyles.description}>
+          {apiUserInfo.UserTitle}
+        </p>
+
+        <p className={pageStyles.infoSection}>
+        {apiUserInfo.Information}
+        </p>
+        </section> */}
       </main>
     </div>
   )
