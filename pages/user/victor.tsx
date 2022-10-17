@@ -1,7 +1,16 @@
 import Head from 'next/head'
+import { useState } from 'react';
 import pageStyles from './victor.module.css'
 
 export default function Home() {
+  const [userName, setUserName] = useState("Victor Sanborn");
+
+  function clickTitle() {
+    setUserName(oldVal => {
+      return `${oldVal} (KingVirr)`;
+    })
+  }
+  
   return (
     <div className="container">
       <Head>
@@ -10,8 +19,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={pageStyles.title}>
-         Victor Sanborn
+        <h1 className={pageStyles.title} onClick={() => clickTitle()}>
+         {userName}
         </h1>
 
         <p className={pageStyles.description}>
