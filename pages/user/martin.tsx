@@ -5,10 +5,10 @@ import pageStyles from './martin.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Martin Bader");
-  const [apiUserInfo, setApiUserInfo] = useState<User>();
+  const [apiUserInfo, setApiUserInfo] = useState<User>(new User());
 
   useEffect(() => {
-		fetch(`../../api/user-information/victor/WubalubaDubDub`)
+		fetch(`../../api/user-information/martin/apiwishesyougoodnight`)
 			.then(function (response) {
 				return response.json();
 			})
@@ -54,7 +54,7 @@ Next.js verfügt über Funktionen, mit denen du deine Anwendung in kürzester Ze
           In diesem Leitfaden lernst du Next.js kennen und erfährst, warum du Next.js einsetzen solltest und welche verschiedenen Anwendungen Next.js in der Produktion verwenden. Außerdem besprechen wir die Elemente von Next.js, einschließlich seiner Funktionen. Zum Schluss lernen wir, wie wir unsere erste Next.js-Anwendung erstellen können.
         </p>
 
-        {/* <section>
+        <section>
           <p>API</p>
           <h1 className={pageStyles.title} onClick={() => clickTitle()}>
          { apiUserInfo.UserName} - {apiUserInfo.UserId}
@@ -67,7 +67,7 @@ Next.js verfügt über Funktionen, mit denen du deine Anwendung in kürzester Ze
         <p className={pageStyles.infoSection}>
         {apiUserInfo.Information}
         </p>
-        </section> */}
+        </section>
       </main>
     </div>
   )
