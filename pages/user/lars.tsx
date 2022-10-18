@@ -4,7 +4,7 @@ import { User } from '../../Models/user';
 import pageStyles from './lars.module.css'
 
 export default function Home() {
-  const [userName, setUserName] = useState("Victor Sanborn");
+  const [userName, setUserName] = useState("Lars Fredriksson");
   const [apiUserInfo, setApiUserInfo] = useState<User>();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Home() {
 
   function clickTitle() {
     setUserName(oldVal => {
-      return `${oldVal} (KingVirr)`;
+      return `${oldVal} (KingLars)`;
     })
   }
   
@@ -36,8 +36,7 @@ export default function Home() {
 
       <main>
         <h1 className={pageStyles.title} onClick={() => clickTitle()}>
-         Lars Fredriksson
-         {/* {userName} */}
+         {userName}
         </h1>
 
         <p className={pageStyles.description}>
