@@ -23,7 +23,7 @@ export default function Home() {
 
   function clickTitle() {
     setUserName(oldVal => {
-      return `${oldVal} (KingVirr)`;
+      return `${oldVal} A`;
     })
   }
   
