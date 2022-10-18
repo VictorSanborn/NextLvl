@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import { User } from '../../Models/user';
-import pageStyles from './victor.module.css'
+import pageStyles from './camilla.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Camilla");
