@@ -5,10 +5,10 @@ import pageStyles from './lars.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Lars Fredriksson");
-  const [apiUserInfo, setApiUserInfo] = useState<User>();
+  const [apiUserInfo, setApiUserInfo] = useState<User>(new User);
 
   useEffect(() => {
-		fetch(`../../api/user-information/victor/WubalubaDubDub`)
+		fetch(`../../api/user-information/lars/WubalubaDubDub`)
 			.then(function (response) {
 				return response.json();
 			})
@@ -35,26 +35,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={pageStyles.title} onClick={() => clickTitle()}>
-         {userName}
-        </h1>
+     
 
-        <p className={pageStyles.description}>
-          My awsome page
-        </p>
-
-        <p className={pageStyles.infoSection}>
-          Lorem ipsum dolor sit amet. Qui sequi assumenda ut mollitia velit eum cumque necessitatibus! Et accusamus molestiae qui minima ipsum sed neque fuga qui omnis placeat. Et magni quibusdam ut magnam dolores sit eveniet veniam et voluptatibus similique!
-          <br/>
-          Et deleniti consequatur et alias nostrum in distinctio animi aut dolores tenetur sed voluptas voluptas. At voluptas quis aut laboriosam laudantium et illum quia qui dignissimos quisquam sit vero voluptatem.
-          <br/>
-          Et architecto dolorem et enim fugit eos cumque laudantium qui unde consequuntur. Aut eligendi culpa ad excepturi consequatur ad eaque soluta et mollitia sunt nam placeat perspiciatis. Ea ipsa expedita ut laborum sequi non odit similique ut maiores repellat est enim debitis vel repellat illo? Et modi ipsam non beatae expedita id voluptas voluptatibus aut omnis voluptatem ut omnis obcaecati.
-        </p>
-
-        {/* <section>
+        <section>
           <p>API</p>
           <h1 className={pageStyles.title} onClick={() => clickTitle()}>
-         { apiUserInfo.UserName} - {apiUserInfo.UserId}
+         {apiUserInfo.UserName} - {apiUserInfo.UserId}
         </h1>
 
         <p className={pageStyles.description}>
@@ -64,7 +50,7 @@ export default function Home() {
         <p className={pageStyles.infoSection}>
         {apiUserInfo.Information}
         </p>
-        </section> */}
+        </section>
       </main>
     </div>
   )
