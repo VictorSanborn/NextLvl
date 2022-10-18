@@ -1,0 +1,52 @@
+.title {
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(187, 73, 73);
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.description { 
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(228, 22, 39);
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.infoSection {
+    margin:auto;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(143, 158, 6);
+    max-width: 50vw;
+}
+
+@media screen and (max-width: 800px) {
+    .title {
+        font-size: 3rem;    
+    }
+
+    .description {
+        font-size: 2rem;    
+    }
+
+    .infoSection {
+        max-width: 70vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 2rem;    
+    }
+
+    .description {
+        font-size: 1rem;    
+    }
+
+    .infoSection {
+        max-width: 90vw;
+    }
+}
+
