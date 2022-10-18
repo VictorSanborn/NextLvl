@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import { User } from '../../Models/user';
-import pageStyles from './victor.module.css'
+import pageStyles from './mattias.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Mattias Eriksson");
@@ -23,7 +23,7 @@ export default function Home() {
 
   function clickTitle() {
     setUserName(oldVal => {
-      return `${oldVal} (KingVirr)`;
+      return `${oldVal} : )`;
     })
   }
   
