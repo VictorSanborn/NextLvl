@@ -5,10 +5,10 @@ import pageStyles from './camilla.module.css'
 
 export default function Home() {
   const [userName, setUserName] = useState("Camilla");
-  const [apiUserInfo, setApiUserInfo] = useState<User>();
+  const [apiUserInfo, setApiUserInfo] = useState<User>(new User);
 
   useEffect(() => {
-		fetch(`../../api/user-information/victor/WubalubaDubDub`)
+		fetch(`../../api/user-information/camilla/WubalubaDubDub`)
 			.then(function (response) {
 				return response.json();
 			})
@@ -30,12 +30,12 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Victors User Page</title>
+        <title>Camillas User Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className={pageStyles.title} onClick={() => clickTitle()}>
+        {/* <h1 className={pageStyles.title} onClick={() => clickTitle()}>
          {userName}
         </h1>
 
@@ -49,12 +49,12 @@ export default function Home() {
           Flank strip steak meatball ham hock, landjaeger alcatra tri-tip bacon sirloin turducken chislic chuck salami beef pig. Rump drumstick tri-tip, ball tip salami tenderloin cow jerky biltong brisket frankfurter chicken. 
           <br/>
           Buffalo turkey brisket ribeye short loin short ribs porchetta pork picanha. Salami ham hock shank cow beef ribs shoulder tongue turkey doner andouille.
-        </p>
+        </p> */}
 
-        {/* <section>
+        <section>
           <p>API</p>
           <h1 className={pageStyles.title} onClick={() => clickTitle()}>
-         { apiUserInfo.UserName} - {apiUserInfo.UserId}
+         {apiUserInfo.UserName} - {apiUserInfo.UserId}
         </h1>
 
         <p className={pageStyles.description}>
@@ -64,7 +64,7 @@ export default function Home() {
         <p className={pageStyles.infoSection}>
         {apiUserInfo.Information}
         </p>
-        </section> */}
+        </section>
       </main>
     </div>
   )
